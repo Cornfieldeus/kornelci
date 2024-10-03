@@ -30,4 +30,4 @@ jobs:
     - name: Run unit tests
       run: |
         pip install pytest
-        pytest test_bad_code.py
+        pytest exercise_2/test_bad_code.py
