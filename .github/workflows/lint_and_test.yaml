@@ -24,7 +24,7 @@ jobs:
     - name: Lint with flake8
       run: |
         pip install flake8
-         flake8 bad_code.py
+         flake8 exercise_2/bad_code.py
 
       # Run unit tests with pytest
     - name: Run unit tests
