@@ -22,7 +22,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: exercise_3
-          file: ./Dockerfile  
           push: true  
           tags: ${{ secrets.DOCKER_USERNAME }}/kornelci:latest  
 
