@@ -21,10 +21,10 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .  
-          file: exercise_3/Dockerfile  
+          context: exercise_3
+          file: ./Dockerfile  
           push: true  
-          tags: ${{ secrets.DOCKER_USERNAME }}/your-repo-name:latest  
+          tags: ${{ secrets.DOCKER_USERNAME }}/kornelci:latest  
 
       - name: Log out from Docker Hub
         run: docker logout
