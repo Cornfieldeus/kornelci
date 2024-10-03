@@ -1,8 +1,12 @@
-# Trigger the workflow on push to main or pull requests
+name: Dockerhub
+
 on:
   push:
     branches:
-      - main
+      [main]
+  pull_request:
+    branches:
+      [main]
 
 jobs:
   build-and-push:
