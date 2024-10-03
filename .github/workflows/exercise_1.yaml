@@ -34,7 +34,7 @@ jobs:
           context: .  # Build context is the root of the repository
           file: exercise_3/Dockerfile  # Point to the Dockerfile in the repo
           push: true  # Push to Docker Hub
-          tags: ${{ secrets.DOCKER_USERNAME }}/your-repo-name:latest  # Adjust this with your Docker repo name
+          tags: ${{ secrets.DOCKER_USERNAME }}/kornelci:latest  # Adjust this with your Docker repo name
 
       # Step 5: (Optional) Logout from Docker Hub
       - name: Log out from Docker Hub
