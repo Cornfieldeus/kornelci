@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '*/5 * * * *' 
+
+jobs:
+  hello:
+    env: 
+     greeting: "Hello"
+    runs-on: ubuntu-latest
+    steps:
+    - name: helloworld
+      uses: actions/
