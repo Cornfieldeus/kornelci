@@ -1,20 +1,49 @@
 name: Protected envs and stages
-
+context: . 
 on:
-  push:
+  merge:
     branches:
       - master
-
-
 jobs:
-  build-and-push:
+  deploy_dev:
+    continue-on-error: false
+    run: echo "This step will fail" && exit 1
+    environment: dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout github repository
+        uses: actions/checkout@v4
+      - name: Build or simulate building
+        run: sleep 5
+      - name: Finish building
+        run: echo "Build completed successfully"
+  deploy_uat:
+    continue-on-error: false
+    run: echo "This step will fail" && exit 1
+    environment: uat
+    needs: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v4
 
       - name: Build or simulate building
-        # run: sleep 5
+        run: sleep 15
+
+      - name: Finish building
+        run: echo "Build completed successfully"
+  deploy_prod:
+    continue-on-error: false
+    run: echo "This step will fail" && exit 1
+    environment: prod
+    needs: uat
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout github repository
+        uses: actions/checkout@v4
+
+      - name: Build or simulate building
+        run: sleep 15
 
       - name: Finish building
         run: echo "Build completed successfully"
