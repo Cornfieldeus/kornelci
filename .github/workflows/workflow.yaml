@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .  
-          file: exercise_4/Dockerfile  
+          file: exercise_3/Dockerfile  
           push: true  
           tags: ${{ secrets.DOCKER_USERNAME }}/kornelci:latest 
       - name: Log out from Docker Hub
