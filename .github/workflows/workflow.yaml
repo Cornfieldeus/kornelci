@@ -16,8 +16,8 @@ jobs:
         run: echo "Build completed successfully"
   deploy_uat:
     continue-on-error: false
-    environment: deploy_uat
-    needs: dev
+    environment: uat
+    needs: deploy_dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout github repository
@@ -30,8 +30,8 @@ jobs:
         run: echo "Build completed successfully"
   deploy_prod:
     continue-on-error: false
-    environment: deploy_prod
-    needs: uat
+    environment: prod
+    needs: deploy_uat
     runs-on: ubuntu-latest
     steps:
       - name: Checkout github repository
