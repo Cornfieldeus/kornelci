@@ -16,7 +16,7 @@ jobs:
         run: echo "Build completed successfully"
   deploy_uat:
     continue-on-error: false
-    environment: uat
+    environment: deploy_uat
     needs: dev
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +30,7 @@ jobs:
         run: echo "Build completed successfully"
   deploy_prod:
     continue-on-error: false
-    environment: prod
+    environment: deploy_prod
     needs: uat
     runs-on: ubuntu-latest
     steps:
